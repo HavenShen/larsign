@@ -16,12 +16,12 @@ Require the `havenshen/larsign` package in your `composer.json` and update your 
 $ composer require havenshen/larsign
 ```
 
-Add the HavenShen\Larsign\LarsignServiceProvider to your `config/app.php` providers array:
+Add the `HavenShen\Larsign\LarsignServiceProvider` to your `config/app.php` providers array:
 ```php
 HavenShen\Larsign\LarsignServiceProvider::class,
 ```
 
-Add the HavenShen\Larsign\LarsignFacade to your `config/app.php` aliases array:
+Add the `HavenShen\Larsign\LarsignFacade` to your `config/app.php` aliases array:
 ```php
 'Larsign' => HavenShen\Larsign\LarsignFacade::class,
 ```
@@ -85,6 +85,49 @@ return [
     'accessKey' => env('LARSIGN_ACCESS_KEY', ''),
     'secretKey' => env('LARSIGN_SECRET_KEY', ''),
 ];
+```
+## Client
+
+Generate signatures
+
+1. Assume the following management credentials
+
+```sh
+AccessKey = "test"
+SecretKey = "123456"
+```
+
+2. Call interface address
+
+```sh
+url = "https://larsign.dev/api/v1/test?page=1"
+```
+
+3. The original string to be signed
+> note: the time-stamping followed by a newline [currenttime + voucher valid seconds]
+
+```sh
+signingStr = "/api/v1/test?page=1\n1510986405"
+```
+
+4. Base64 url safe encode
+
+```sh
+signingStrBase64UrlSafeEncode = "L2FwaS92MS90ZXN0P3BhZ2U9MQoxNTEwOTg2NDY1"
+```
+
+5. `hmac_sha1` carries `SecretKey` encryption then base64 url safe encode
+
+```sh
+sign = "MLKnFIdI-0TOQ4mHn5TyCcmWACU="
+```
+
+
+6. The final administrative credentials are 
+> stitching `Larsign` Space `AccessKey`:`sign`:`signingStrBase64UrlSafeEncode`
+
+```sh
+larsignToken = "Larsign test:MLKnFIdI-0TOQ4mHn5TyCcmWACU=:L2FwaS92MS90ZXN0P3BhZ2U9MQoxNTEwOTg2NDY1"
 ```
 
 ## License
