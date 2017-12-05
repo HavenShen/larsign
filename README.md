@@ -112,33 +112,33 @@ Generate `Larsign` signatures
 
 1. Assume the following management credentials:
 
-```sh
+```shell
 AccessKey = "test"
 SecretKey = "123456"
 ```
 
 2. Call interface address:
 
-```sh
+```shell
 url = "https://larsign.dev/api/v1/test?page=1"
 ```
 
 3. The original string to be signed:
 > note: the time-stamping followed by a newline [currenttime + voucher valid seconds]
 
-```sh
+```shell
 signingStr = "/api/v1/test?page=1\n1510986405"
 ```
 
 4. Base64 url safe encode:
 
-```sh
+```shell
 signingStrBase64UrlSafeEncode = "L2FwaS92MS90ZXN0P3BhZ2U9MQoxNTEwOTg2NDY1"
 ```
 
 5. `hmac_sha1` carries `SecretKey` encryption then base64 url safe encode:
 
-```sh
+```shell
 sign = "MLKnFIdI-0TOQ4mHn5TyCcmWACU="
 ```
 
@@ -146,26 +146,26 @@ sign = "MLKnFIdI-0TOQ4mHn5TyCcmWACU="
 6. The final administrative credentials are:
 > note: stitching `headerName` Space `AccessKey`:`sign`:`signingStrBase64UrlSafeEncode`
 
-```sh
+```shell
 larsignToken = "Larsign test:MLKnFIdI-0TOQ4mHn5TyCcmWACU=:L2FwaS92MS90ZXN0P3BhZ2U9MQoxNTEwOTg2NDY1"
 ```
 
 7. Add http header:
 > note: header key in `config/larsign.php -> headerName` 
 
-```sh
+```shell
 Larsign:Larsign test:MLKnFIdI-0TOQ4mHn5TyCcmWACU=:L2FwaS92MS90ZXN0P3BhZ2U9MQoxNTEwOTg2NDY1
 ```
 
 ## Client signature authorization failed
 
-```sh
+```shell
 Http Response: 403
 ```
 
 ## Testing
 
-```sh
+```shell
 $ phpunit
 ```
 
