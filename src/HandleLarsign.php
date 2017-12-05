@@ -4,6 +4,7 @@ namespace HavenShen\Larsign;
 
 use Closure;
 use Larsign;
+use Illuminate\Http\Response as LaravelResponse;
 
 /**
  * HandleLarsign
@@ -24,7 +25,8 @@ class HandleLarsign
     {
 
         if (! Larsign::check($request)) {
-            throw new LarsignException();
+            return new LaravelResponse('Not allowed.', 403);
+            // throw new LarsignException();
         }
 
         return $next($request);

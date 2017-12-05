@@ -176,17 +176,17 @@ final class LarsignService
      * Verify callback
      *
      * @param string $contentType
-     * @param string $authorizationSignature
+     * @param string $authorizationLarsign
      * @param string $url
      * @param string $body
      * @param int $bodeadlinedy
      * @return bool
      */
-    public function verifyCallback($contentType, $authorizationSignature, $url, $body, $deadline)
+    public function verifyCallback($contentType, $authorizationLarsign, $url, $body, $deadline)
     {
-        $authorizationSignature = $this->options['headerName'] .' '. $this->signRequest($url, $body, $contentType, $deadline);
+        $authorizationLarsignRs = $this->options['headerName'] .' '. $this->signRequest($url, $body, $contentType, $deadline);
 
-        return $authorizationSignature === $authorizationSignature;
+        return $authorizationLarsign === $authorizationLarsignRs;
     }
 
     /**

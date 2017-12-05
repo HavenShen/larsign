@@ -30,9 +30,9 @@ class TestCase extends \Orchestra\Testbench\TestCase
         // $app['config']->set('larsign', $this->config);
 
         $app['config']['larsign'] = [
-            'headerName' => 'haha',
-            'accessKey' => '12121221',
-            'secretKey' => '12112121',
+            'headerName' => 'Larsign',
+            'accessKey' => 'soudryg08yoa4wt',
+            'secretKey' => 'sry5yw4yoij[09',
         ];
 
     }
