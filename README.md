@@ -171,5 +171,5 @@ $ phpunit
 
 ## License
 
-Released under the MIT License, see [LICENSE](LICENSE).
+The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
 
