@@ -3,7 +3,7 @@
 
 ## About
 
-The `larsign` package signature server.
+The `larsign` package authorized signature server.
 
 ## Features
 
@@ -144,10 +144,29 @@ sign = "MLKnFIdI-0TOQ4mHn5TyCcmWACU="
 
 
 6. The final administrative credentials are 
-> stitching `Larsign` Space `AccessKey`:`sign`:`signingStrBase64UrlSafeEncode`
+> note: stitching `Larsign` Space `AccessKey`:`sign`:`signingStrBase64UrlSafeEncode`
 
 ```sh
 larsignToken = "Larsign test:MLKnFIdI-0TOQ4mHn5TyCcmWACU=:L2FwaS92MS90ZXN0P3BhZ2U9MQoxNTEwOTg2NDY1"
+```
+
+7. Add http header
+> note: header key in `config/larsign.php -> headerName` 
+
+```sh
+Larsign:Larsign test:MLKnFIdI-0TOQ4mHn5TyCcmWACU=:L2FwaS92MS90ZXN0P3BhZ2U9MQoxNTEwOTg2NDY1
+```
+
+## Client signature authorization failed
+
+```sh
+Http Response: 403
+```
+
+## Testing
+
+```sh
+$ phpunit
 ```
 
 ## License
