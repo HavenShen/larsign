@@ -68,10 +68,10 @@ protected $routeMiddleware = [
 ## Configuration
 
 The defaults are set in `config/larsign.php`. Copy this file to your own config directory to modify the values. You can publish the config using this command:
+
 ```sh
 $ php artisan vendor:publish --provider="HavenShen\Larsign\LarsignServiceProvider"
 ```
-
     
 ```php
 return [
@@ -86,9 +86,29 @@ return [
     'secretKey' => env('LARSIGN_SECRET_KEY', ''),
 ];
 ```
+
+Add api route in `routes/api.php` Copy this.
+
+```php
+Route::middleware(['auth.larsign'])->group(function () {
+    Route::get('/larsign', function () {
+    return [
+        'message' => 'done.'
+    ]);
+});
+```
+or
+
+```php
+Route::get('/larsign', function () {
+    return [
+        'message' => 'done.'
+    ];
+})->middleware('auth.larsign');
+```
 ## Client
 
-Generate signatures
+Generate `Larsign` signatures
 
 1. Assume the following management credentials
 
