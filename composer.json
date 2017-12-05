@@ -1,6 +1,7 @@
 {
     "name": "havenshen/larsign",
-    "description": "Laravel signature certification with web API.",
+    "description": "Laravel signature certification with web API server.",
+    "keywords": ["laravel", "signature", "authorization", "api", "middleware", "laravel-5-packages"],
     "license": "MIT",
     "authors": [
         {
