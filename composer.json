@@ -1,0 +1,36 @@
+{
+    "name": "havenshen/larsign",
+    "description": "Laravel signature certification with web API.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "HavenShen",
+            "email": "havenshen@gmail.com"
+        }
+    ],
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "^6.5",
+        "orchestra/testbench": "~3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "HavenShen\\Larsign\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "HavenShen\\Larsign\\LarsignServiceProvider"
+            ],
+            "aliases": {
+                "Larsign": "HavenShen\\Larsign\\LarsignFacade"
+            }
+        }
+    }
+}
