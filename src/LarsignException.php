@@ -28,7 +28,7 @@ class LarsignException extends Exception
      */
     public function __construct($message = 'Signature unauthenticated.', array $guards = [])
     {
-        parent::__construct($message, 401);
+        parent::__construct($message, 403);
 
         $this->guards = $guards;
     }
