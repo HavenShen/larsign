@@ -1,5 +1,14 @@
 # Api Authorized Signature Middleware for Laravel 5
 
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/HavenShen/larsign/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/HavenShen/larsign/?branch=master)
+[![Build Status](https://scrutinizer-ci.com/g/HavenShen/larsign/badges/build.png?b=master)](https://scrutinizer-ci.com/g/HavenShen/larsign/build-status/master)
+[![Code Coverage](https://scrutinizer-ci.com/g/HavenShen/larsign/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/HavenShen/larsign/?branch=master)
+[![Build Status](https://travis-ci.org/HavenShen/larsign.svg?branch=master)](https://travis-ci.org/HavenShen/larsign)
+[![Latest Stable Version](https://poser.pugx.org/HavenShen/larsign/v/stable.svg)](https://packagist.org/packages/HavenShen/larsign)
+[![Latest Unstable Version](https://poser.pugx.org/HavenShen/larsign/v/unstable.svg)](https://packagist.org/packages/HavenShen/larsign)
+[![Latest Stable Version](https://img.shields.io/packagist/v/HavenShen/larsign.svg?style=flat-square)](https://packagist.org/packages/HavenShen/larsign)
+[![Total Downloads](https://img.shields.io/packagist/dt/HavenShen/larsign.svg?style=flat-square)](https://packagist.org/packages/HavenShen/slim-born)
+[![License](https://img.shields.io/packagist/l/HavenShen/larsign.svg?style=flat-square)](https://packagist.org/packages/HavenShen/larsign)
 
 ## About
 
