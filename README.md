@@ -20,6 +20,8 @@ The `larsign` package authorized signature server.
 
 ## Installation
 
+### Laravel
+
 Require the `havenshen/larsign` package in your `composer.json` and update your dependencies:
 ```sh
 $ composer require havenshen/larsign
@@ -33,6 +35,18 @@ HavenShen\Larsign\LarsignServiceProvider::class,
 Add the `HavenShen\Larsign\LarsignFacade` to your `config/app.php` aliases array:
 ```php
 'Larsign' => HavenShen\Larsign\LarsignFacade::class,
+```
+
+### Lumen
+
+Require the `havenshen/larsign` package in your `composer.json` and update your dependencies:
+```sh
+$ composer require havenshen/larsign
+```
+
+Register the package with lumen in `bootstrap/app.php` with the following:
+```php
+$app->register(HavenShen\Larsign\LarsignServiceProvider::class);
 ```
 
 ## Global usage
@@ -76,12 +90,14 @@ protected $routeMiddleware = [
 
 ## Configuration
 
-The defaults are set in `config/larsign.php`. Copy this file to your own config directory to modify the values. You can publish the config using this command:
+The defaults are set in `config/larsign.php`. Copy this file to your own config directory to modify the values. If you're using Laravel, you can publish the config using this command:
 
 ```sh
 $ php artisan vendor:publish --provider="HavenShen\Larsign\LarsignServiceProvider"
 ```
     
+If you're using Lumen, Copy the configuration `larsign.php` from `vendor/havenshen/larsign/config/larsign.php` to your `config/` directory
+
 ```php
 return [
     /*
