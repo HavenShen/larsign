@@ -20,7 +20,7 @@ The `larsign` package authorized signature server.
 
 ## Installation
 
-###Laravel
+### Laravel
 
 Require the `havenshen/larsign` package in your `composer.json` and update your dependencies:
 ```sh
@@ -37,7 +37,7 @@ Add the `HavenShen\Larsign\LarsignFacade` to your `config/app.php` aliases array
 'Larsign' => HavenShen\Larsign\LarsignFacade::class,
 ```
 
-###Lumen
+### Lumen
 
 Require the `havenshen/larsign` package in your `composer.json` and update your dependencies:
 ```sh
