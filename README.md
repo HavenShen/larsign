@@ -96,7 +96,7 @@ The defaults are set in `config/larsign.php`. Copy this file to your own config 
 $ php artisan vendor:publish --provider="HavenShen\Larsign\LarsignServiceProvider"
 ```
     
-If you're using Lumen, Copy the configuration [larsign.php](src/config/larsign.php) to your config/ directory
+If you're using Lumen, Copy the configuration `larsign.php` from `vendor/havenshen/larsign/config/larsign.php` to your `config/` directory
 
 ```php
 return [
