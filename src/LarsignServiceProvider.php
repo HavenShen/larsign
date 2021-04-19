@@ -4,6 +4,8 @@ namespace HavenShen\Larsign;
 
 use HavenShen\Larsign\LarsignService;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Foundation\Application as LaravelApplication;
+use Laravel\Lumen\Application as LumenApplication;
 
 /**
  * LarsignServiceProvider
@@ -20,7 +22,11 @@ class LarsignServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->publishes([$this->configPath() => config_path('larsign.php')]);
+        if ($this->app instanceof LaravelApplication && $this->app->runningInConsole()) {
+            $this->publishes([$this->configPath() => config_path('larsign.php')]);
+        } elseif ($this->app instanceof LumenApplication) {
+            $this->app->configure('larsign');
+        }
     }
 
     /**
@@ -36,7 +42,13 @@ class LarsignServiceProvider extends ServiceProvider
             return new LarsignService($app['config']->get('larsign'));
         });
 
-        $this->app->alias(LarsignService::class, 'larsign');
+        if ($this->app instanceof LaravelApplication) {
+            $this->app->alias(LarsignService::class, 'larsign');
+        } elseif ($this->app instanceof LumenApplication) {
+            if (!class_exists('Larsign')) {
+                class_alias(LarsignFacade::class, 'Larsign');
+            }
+        }
     }
 
     /**
